@@ -6,6 +6,8 @@ import lv.ss.demo.pages.result.ResultTable;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
+import java.util.List;
+
 public class SearchResultSteps extends ScenarioSteps {
 
     ResultTable resultTable;
@@ -28,7 +30,12 @@ public class SearchResultSteps extends ScenarioSteps {
     }
 
     @Step
-    public void select_random_result_rows(int rowsCount) {
-        resultPage.checkRandomRowsCount(rowsCount);
+    public void select_random_result_rows(int rowsCount, List<String> favoriteItemsIds) {
+        resultPage.checkRandomRowsCount(rowsCount, favoriteItemsIds);
+    }
+
+    @Step
+    public void add_selected_to_bookmarks() {
+        resultPage.clickAddToBookmarks();
     }
 }
