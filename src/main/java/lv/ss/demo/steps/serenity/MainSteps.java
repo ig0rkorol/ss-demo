@@ -3,16 +3,14 @@ package lv.ss.demo.steps.serenity;
 import lv.ss.demo.model.Category;
 import lv.ss.demo.model.Languages;
 import lv.ss.demo.pages.HeaderMenu;
-import lv.ss.demo.pages.MainPageSS;
+import lv.ss.demo.pages.MainPage;
 import lv.ss.demo.pages.search.SearchForm;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-public class MainSearchSteps extends ScenarioSteps {
-
-    public MainPageSS mainPage;
+public class MainSteps extends ScenarioSteps {
+    public MainPage mainPage;
     public HeaderMenu headerMenu;
-    public SearchForm searchForm;
 
     @Step
     public void open_home_page() {
@@ -34,18 +32,6 @@ public class MainSearchSteps extends ScenarioSteps {
         headerMenu.clickSearchMenuItem();
     }
 
-    @Step
-    public void fill_search_form() {
-        searchForm.typeSearchWord("Computer");
-        searchForm.typePriceMin("160");
-        searchForm.typePriceMax("300");
-    }
 
-    @Step
-    public void search() {
-        fill_search_form();
-        searchForm.click_search_button();
-        System.out.println();
-    }
 
 }

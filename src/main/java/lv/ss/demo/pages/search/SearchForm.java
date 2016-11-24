@@ -1,12 +1,12 @@
 package lv.ss.demo.pages.search;
 
-import lv.ss.demo.model.Languages;
 import lv.ss.demo.model.SubHeading;
-import lv.ss.demo.pages.SSBasePage;
+import lv.ss.demo.pages.BasePage;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.apache.commons.lang3.StringUtils;
 
-public class SearchForm extends SSBasePage {
+public class SearchForm extends BasePage {
     private static final String FORM_LOCATOR = "//form[contains(@action,'search-result')]";
 
     @FindBy(id="ptxt")
@@ -24,18 +24,21 @@ public class SearchForm extends SSBasePage {
     @FindBy(id="sbtn")
     private WebElementFacade searchButton;
 
-
     public void typeSearchWord(String value){
-        searchWord.type(value);
+        if(StringUtils.isNotEmpty(value))
+            searchWord.type(value);
     }
-    public void typePriceMin(String min){
-        priceMin.type(min);
+    public void typePriceMin(String value){
+        if(StringUtils.isNotEmpty(value))
+            priceMin.type(value);
     }
-    public void typePriceMax(String max){
-        priceMax.type(max);
+    public void typePriceMax(String value){
+        if(StringUtils.isNotEmpty(value))
+            priceMax.type(value);
     }
     public void selectSubHeading(SubHeading value){
-        subHeading.selectByIndex(value.ordinal());
+        if(!(value==null))
+            subHeading.selectByIndex(value.ordinal());
     }
     public void click_search_button() {
         searchButton.click();

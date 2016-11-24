@@ -6,7 +6,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl("https://www.ss.lv/")
-public class MainCategoryBasePage extends SSBasePage {
+public class MainCategoryBasePage extends BasePage {
 
     @FindBy(name="search")
     private WebElementFacade searchTerms;

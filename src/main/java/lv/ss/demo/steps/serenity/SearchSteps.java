@@ -1,42 +1,23 @@
 package lv.ss.demo.steps.serenity;
 
-import lv.ss.demo.pages.MainPageSS;
+import lv.ss.demo.model.SearchOptions;
+import lv.ss.demo.pages.search.SearchForm;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.hasItem;
-
 public class SearchSteps extends ScenarioSteps {
-
-    MainPageSS mainPage;
+    public SearchForm searchForm;
 
     @Step
-    public void enters(String keyword) {
-//        mainPage.enter_keywords(keyword);
+    public void fill_search_form(SearchOptions searchOptions) {
+        searchForm.typeSearchWord(searchOptions.getWord());
+        searchForm.typePriceMin(searchOptions.getMinPrice());
+        searchForm.typePriceMax(searchOptions.getMaxPrice());
     }
 
     @Step
-    public void starts_search() {
-       // mainPage.lookup_terms();
+    public void search(SearchOptions value) {
+        fill_search_form(value);
+        searchForm.click_search_button();
     }
-
-    @Step
-    public void should_see_definition(String definition) {
-        //assertThat(mainPage.getDefinitions(), hasItem(containsString(definition)));
-    }
-
-    @Step
-    public void is_the_home_page() {
-        mainPage.open();
-    }
-
-    @Step
-    public void looks_for(String term) {
-        enters(term);
-        starts_search();
-    }
-
-
 }

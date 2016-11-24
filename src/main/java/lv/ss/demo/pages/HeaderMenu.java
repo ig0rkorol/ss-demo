@@ -4,7 +4,7 @@ import lv.ss.demo.model.Languages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
-public class HeaderMenu extends SSBasePage {
+public class HeaderMenu extends BasePage {
 
 //    @FindBy(css="[http-equiv='set-cookie']")
 //    private WebElementFacade htmlMetaTag;
