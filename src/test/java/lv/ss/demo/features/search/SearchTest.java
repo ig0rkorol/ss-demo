@@ -53,10 +53,8 @@ public class SearchTest {
         resultSteps.add_selected_to_bookmarks();
 
         Thread.sleep(5000);
-        System.out.println("FINISH");
 
 
-//        ((JavascriptExecutor) getDriver()).executeScript("return arguments[0].getAttribute('content');", htmlMetaTag)
 
     }
 
