@@ -15,11 +15,11 @@ public class TableElement extends BasePage {
     public void checkRandomRows(int rowsToCheckCount, List<String> favoriteItemsIds){
         int totalRowsCount = getRows().size();
         logger.info("Result rows count is {}", totalRowsCount);
-        List<Integer> randomRange = RandomGenerator.getRandomNumberInRange(1, totalRowsCount);
+        List<Integer> randomRange = RandomGenerator.getRandomNumberInRange(0, totalRowsCount-1);
         for (int i=0;i<rowsToCheckCount;i++){
             int rowNumber = randomRange.get(i).intValue();
             String itemId = checkRow(rowNumber);
-            logger.info("Select row #{} Item ID is {}" ,rowNumber+1, itemId);
+            logger.info("Select row #{} Item ID is {}", rowNumber+1 , itemId);
             favoriteItemsIds.add(itemId);
         }
     }

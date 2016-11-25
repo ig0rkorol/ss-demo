@@ -7,8 +7,8 @@ import net.thucydides.core.annotations.Feature;
 
 public class Application {
     @Feature
-    public class Search {
-        public class Simple {}
+    public class Bookmarks {
+        public class AddBookmarks {}
         public class Advanced {}
     }
 }

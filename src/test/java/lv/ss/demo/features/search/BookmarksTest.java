@@ -21,8 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SerenityRunner.class)
-@Story(Application.Search.Simple.class)
-public class SearchTest {
+@Story(Application.Bookmarks.AddBookmarks.class)
+public class BookmarksTest {
     private final SearchOptions simple = new SearchOptions.Builder().word("computer").build();
     private final SearchOptions advanced = new SearchOptions.Builder().priceMin("160").priceMax("300").build();
     private List<String> favoriteItemsIds = new ArrayList<>();
