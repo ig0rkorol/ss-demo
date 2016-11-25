@@ -1,5 +1,5 @@
-Task which must be done using java + webdriver
-The script must implement the following steps:
+### Task which must be done using java + webdriver
+### The script must implement the following steps:
 1. Open the browser and maximize it.
 2. Open  ss.lv
 3. switch to Russian language.
@@ -14,3 +14,8 @@ The script must implement the following steps:
 11. Open “Закладки” and check that the ads on the page match the previously selected
 12. Close the browser.
 Deadline - 1 week
+
+### Run from command line:
+1) mvn integration-test serenity:aggregate
+2) find html report in /target/site/ then open in browser index.html
+

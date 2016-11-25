@@ -31,7 +31,7 @@ public class SearchResultSteps extends ScenarioSteps {
 
     @Step
     public void select_random_result_rows(int rowsCount, List<String> favoriteItemsIds) {
-        resultPage.checkRandomRowsCount(rowsCount, favoriteItemsIds);
+        resultPage.checkRandomRows(rowsCount, favoriteItemsIds);
     }
 
     @Step

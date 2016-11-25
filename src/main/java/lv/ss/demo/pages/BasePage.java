@@ -5,11 +5,9 @@ import net.thucydides.core.pages.PageObject;
 
 public class BasePage extends PageObject {
 
-
     @WhenPageOpens
     public void makeBrowserWindowFullScreen() {
         getDriver().manage().window().maximize();
     }
-
 
 }

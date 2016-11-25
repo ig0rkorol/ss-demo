@@ -19,28 +19,4 @@ public class MainCategoryBasePage extends BasePage {
         $(locator).click();
     }
 
-/*
-    public void enter_keywords(String keyword) {
-        searchTerms.type(keyword);
-    }
-
-    public void lookup_terms() {
-        lookupButton.click();
-    }
-
-    public List<String> getDefinitions() {
-        WebElementFacade definitionList = find(By.tagName("ol"));
-        List<WebElement> results = definitionList.findElements(By.tagName("li"));
-        return convert(results, toStrings());
-    }
-
-    private Converter<WebElement, String> toStrings() {
-        return new Converter<WebElement, String>() {
-            public String convert(WebElement from) {
-                return from.getText();
-            }
-        };
-    }
-*/
-
 }

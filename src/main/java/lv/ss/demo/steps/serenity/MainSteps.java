@@ -32,6 +32,8 @@ public class MainSteps extends ScenarioSteps {
         headerMenu.clickSearchMenuItem();
     }
 
-
-
+    @Step
+    public void open_bookmarks() {
+        mainPage.openBookmarks();
+    }
 }

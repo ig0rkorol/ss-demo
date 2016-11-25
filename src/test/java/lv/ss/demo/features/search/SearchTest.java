@@ -5,6 +5,7 @@ import lv.ss.demo.model.ComputerDealType;
 import lv.ss.demo.model.Languages;
 import lv.ss.demo.model.SearchOptions;
 import lv.ss.demo.requirements.Application;
+import lv.ss.demo.steps.serenity.BookmarksSteps;
 import lv.ss.demo.steps.serenity.MainSteps;
 import lv.ss.demo.steps.serenity.SearchResultSteps;
 import lv.ss.demo.steps.serenity.SearchSteps;
@@ -38,8 +39,11 @@ public class SearchTest {
     @Steps
     public SearchResultSteps resultSteps;
 
+    @Steps
+    public BookmarksSteps bookmarksSteps;
+
     @Test
-    public void clickLanguageTest() throws InterruptedException {
+    public void addBookmarksTest() throws InterruptedException {
         mainSteps.open_home_page();
         mainSteps.switch_language_to(Languages.RUSSIAN);
         mainSteps.open_main_category(Category.ELECTRONICS);
@@ -51,12 +55,7 @@ public class SearchTest {
         searchSteps.search(advanced);
         resultSteps.select_random_result_rows(3, favoriteItemsIds);
         resultSteps.add_selected_to_bookmarks();
-
-        Thread.sleep(5000);
-
-
-
+        mainSteps.open_bookmarks();
+        bookmarksSteps.verify_items_present(favoriteItemsIds);
     }
-
-
-} 
+}

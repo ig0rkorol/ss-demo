@@ -6,15 +6,11 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class HeaderMenu extends BasePage {
 
-//    @FindBy(css="[http-equiv='set-cookie']")
-//    private WebElementFacade htmlMetaTag;
-
     @FindBy(css=".menu_lang a")
     private WebElementFacade language;
 
     @FindBy(xpath="//*[contains(@class,'menu_main')]//a[contains(@href,'search')]")
     private WebElementFacade searchMenu;
-
 
     public void clickLanguage() {
         language.click();
@@ -22,7 +18,6 @@ public class HeaderMenu extends BasePage {
 
     public Languages getCurrentLanguage(){
         String langValue = language.getTextValue().replaceAll("\\/", "");
-        System.out.println(langValue);
         return langValue.equalsIgnoreCase(Languages.RUSSIAN.getCode())?Languages.LATVIAN:Languages.RUSSIAN;
     }
 
