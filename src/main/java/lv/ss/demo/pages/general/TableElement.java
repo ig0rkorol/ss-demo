@@ -12,7 +12,7 @@ import java.util.List;
 public class TableElement extends BasePage {
     private static final Logger logger = LoggerFactory.getLogger(TableElement.class);
 
-    public void checkRandomRows(int rowsToCheckCount, List<String> favoriteItemsIds){
+    public void checkRandomRows(int rowsToCheckCount, List<String> itemsIds){
         int totalRowsCount = getRows().size();
         logger.info("Result rows count is {}", totalRowsCount);
         List<Integer> randomRange = RandomGenerator.getRandomNumberInRange(0, totalRowsCount-1);
@@ -20,7 +20,7 @@ public class TableElement extends BasePage {
             int rowNumber = randomRange.get(i).intValue();
             String itemId = checkRow(rowNumber);
             logger.info("Select row #{} Item ID is {}", rowNumber+1 , itemId);
-            favoriteItemsIds.add(itemId);
+            itemsIds.add(itemId);
         }
     }
     public String checkRow(int rowNumber) {
