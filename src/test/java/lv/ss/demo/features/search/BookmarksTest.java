@@ -54,6 +54,7 @@ public class BookmarksTest {
         resultSteps.filter_by_deal_type(ComputerDealType.SELL);
         resultSteps.open_advanced_search();
         searchSteps.search(advanced);
+        resultSteps.verify_items_count_not_less(FAVORITE_ITEMS_COUNT);
         resultSteps.select_random_result_rows(FAVORITE_ITEMS_COUNT, favoriteItemsIds);
         resultSteps.add_selected_to_bookmarks();
         mainSteps.open_bookmarks();

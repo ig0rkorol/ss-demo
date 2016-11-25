@@ -8,6 +8,9 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThan;
+
 public class SearchResultSteps extends ScenarioSteps {
 
     ResultTable resultTable;
@@ -37,5 +40,11 @@ public class SearchResultSteps extends ScenarioSteps {
     @Step
     public void add_selected_to_bookmarks() {
         resultPage.clickAddToBookmarks();
+    }
+
+    @Step
+    public void verify_items_count_not_less(int value) {
+        int itemsCount = resultPage.getRows().size();
+        assertThat(itemsCount, greaterThan(value-1));
     }
 }
