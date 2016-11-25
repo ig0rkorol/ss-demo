@@ -26,6 +26,7 @@ public class BookmarksTest {
     private final SearchOptions simple = new SearchOptions.Builder().word("computer").build();
     private final SearchOptions advanced = new SearchOptions.Builder().priceMin("160").priceMax("300").build();
     private List<String> favoriteItemsIds = new ArrayList<>();
+    private final int FAVORITE_ITEMS_COUNT = 3;
 
     @Managed(uniqueSession = true)
     public WebDriver webdriver;
@@ -53,7 +54,7 @@ public class BookmarksTest {
         resultSteps.filter_by_deal_type(ComputerDealType.SELL);
         resultSteps.open_advanced_search();
         searchSteps.search(advanced);
-        resultSteps.select_random_result_rows(3, favoriteItemsIds);
+        resultSteps.select_random_result_rows(FAVORITE_ITEMS_COUNT, favoriteItemsIds);
         resultSteps.add_selected_to_bookmarks();
         mainSteps.open_bookmarks();
         bookmarksSteps.verify_items_present(favoriteItemsIds);
