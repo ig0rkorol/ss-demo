@@ -17,5 +17,6 @@ Deadline - 1 week
 
 ### Run from command line:
 1) mvn integration-test serenity:aggregate -Dwebdriver.driver=chrome
+
 2) find html report in /target/site/ then open in browser index.html
 
